@@ -34,9 +34,6 @@
 
 
 
-
-
-
 .m__calculator .m__cell {
     flex: 1;
     /* margin: 0 0 15px 0px; */
@@ -544,7 +541,7 @@ button#add_appliance {
     gap: 4px;
 }
 #m__error{
-        display: block;
+    display: block;
     font-size: 14px;
     font-weight: 600;
     color: #e50124;
@@ -604,7 +601,7 @@ span.m__val {
 
 }
 
-
+/* changes i have made */
 .contact {
     font-size: 23px;
     font-weight: 600;
@@ -614,8 +611,42 @@ span.m__val {
     background: #f2f2f2;
     padding: 15px 10px;
     border-radius: 6px;
-    
 }
+
+#removeAllAppliances {
+    border: 0;
+    background: transparent;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 600;
+    background-color: #e50124;
+    color: #ffffff;
+    min-width: 200px;
+    cursor: pointer;
+    height: 26px;
+    border-radius: 4px;
+    border: 1px solid rgb(28 97 149 / 14%);
+    gap: 4px;
+    margin-top: 23px;
+}
+
+.delete-icon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.delete-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: red; /* Change color if needed */
+}
+
 
 
 

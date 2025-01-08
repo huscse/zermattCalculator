@@ -264,6 +264,49 @@ function checkRemoveButtons() {
     }
 }
 
+document.getElementById('removeAllAppliances').addEventListener('click', function () {
+    // Remove all rows except the default one
+    let rows = document.querySelectorAll('.m__rows_section .m__row');
+    rows.forEach((row, index) => {
+        if (index > 0) {
+            row.remove();
+        }
+    });
+
+    // Reset the default row to initial values
+    resetDefaultRow();
+
+    // Update total energy consumption
+    MCalculate();
+
+    // Re-check visibility of remove buttons
+    checkRemoveButtons();
+});
+
+function resetDefaultRow() {
+    const firstRow = document.querySelector('.m__rows_section .m__row:first-child');
+    if (firstRow) {
+        // Reset the appliance select input
+        const applianceSelect = firstRow.querySelector('select');
+        if (applianceSelect) {
+            applianceSelect.value = ""; // Set to default empty value
+        }
+
+        // Reset power rating input
+        const powerRatingInput = firstRow.querySelector('[id^="PowerRating_"]');
+        if (powerRatingInput) {
+            powerRatingInput.value = "100"; // Set default value (update if different)
+        }
+
+        // Reset hours of use input
+        const hoursUseInput = firstRow.querySelector('[id^="HourseUse_"]');
+        if (hoursUseInput) {
+            hoursUseInput.value = "1.2"; // Set default value (update if different)
+        }
+    }
+}
+
+
 
 function updateDivClass(energy) {
     // Get the div
