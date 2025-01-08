@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4/dist/autoNumeric.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.0.0/dist/js/tom-select.complete.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.0.0/dist/css/tom-select.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v2">
+</head>
+
+<body style="margin: 0;padding: 0 0 100px 0; background: #fbfbfb;">
+    
+<style type="text/css">
+    .informative_{
+        font-size: 12px;
+        background: #ffb2b2;
+        padding: 10px;
+        margin: -15px 0 40px;
+        text-align: center;
+        border-radius: 4px;
+        color: #850418;
+        font-weight: 600;
+        display: none;
+    }
+    .informative_.m_less,.informative_.m_more{
+        display: block;
+    }
+    .informative_.m_less .is_more, .informative_.m_more .is_less{
+        display: none;
+    }
+</style>
+
+
+    <div id="m_calculator_content">
+        <div class="m__calculator" style="padding-top:30px; padding-bottom: 30px">
+            <div class="m__wrap">
+                <div class="m__section m__rows_section">
+                </div>
+                <div class="m__section">
+                    <div class="m__row">
+                        <div class="m__cell" style="padding: 10px 0;">
+                            <div style="margin: 0 0 15px;">
+                                <button id="add_appliance">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M12 5l0 14" />
+                                        <path d="M5 12l14 0" /></svg>
+                                    <span>Add Appliance</span>
+                                </button>
+                            </div>
+                            <div class="m__label">
+                                <div class="m__name" id="Total_Energy">Total Energy Consumption: <span>0.00 Wh/day</span></div>
+                            </div>
+                            <div class="m__group text_center">
+                                <button class="button__e" onclick="MShow()">See Solutions</button>
+                                <span id="m__error" style="display: none;">Please select your appliance details</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block_table1" id="block_table1" style="display: none;">
+                        <div class="mtitle">
+                            Recommended Zermatt System
+                        </div>
+
+                        <div class="informative_">
+                            <span class="is_less">Your total energy consumption is less than we offer and the closest modal that would work for you is Zermatt BS-1.5 </span>
+                            <span class="is_more">Your total energy consumption is mora than we offer and the closest modal that would work for you is Zermatt BS-9.2 </span>
+                        </div>
+                        <div class="table_resp">
+                            <div class="table_recommend">
+                                <div class="col_labels">
+                                    <div class="Appliance_labels">
+                                    </div>
+                                    <div class="specs_labels">
+                                        <div>Storage</div>
+                                        <div>Battery Type</div>
+                                        <div>Inverter</div>
+                                        <div style="height: 60px">Rechargeable via <br> Grid Voltage</div>
+                                    </div>
+                                </div>
+                                <div class="recommended_columns">
+                                    <div class="zarmatt_col zarmatt_BS_1_5 Pack1">
+                                        <div class="modal_name">Zermatt BS-1.5</div>
+                                        <div class="modal_desc">Essential Power<br>at a Low Cost!</div>
+                                        <div class="Appliance_values" id="zarmatt_BS_1_5">
+                                        </div>
+                                        <div class="specs_values">
+                                            <div class="m_storage">1500Wh</div>
+                                            <div>Lithium LiFePO4</div>
+                                            <div>2.0kW</div>
+                                            <div style="height: 60px"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M5 12l5 5l10 -10" /></svg></div>
+                                        </div>
+                                    </div>
+                                    <div class="zarmatt_col zarmatt_BS_2_3 Pack2">
+                                        <div class="modal_name">Zermatt BS-2.3</div>
+                                        <div class="modal_desc">Backup Power<br>on a Budget!</div>
+                                        <div class="Appliance_values" id="zarmatt_BS_2_3">
+                                        </div>
+                                        <div class="specs_values">
+                                            <div class="m_storage">2300Wh</div>
+                                            <div>Lithium LiFePO4</div>
+                                            <div>2.0kW</div>
+                                            <div style="height: 60px"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M5 12l5 5l10 -10" /></svg></div>
+                                        </div>
+                                    </div>
+                                    <div class="zarmatt_col zarmatt_BS_4_6 Pack3">
+                                        <div class="modal_name">Zermatt BS-4.6</div>
+                                        <div class="modal_desc">Battery Storage Precisely<br>Meets Your Needs!</div>
+                                        <div class="Appliance_values" id="zarmatt_BS_4_6">
+                                        </div>
+                                        <div class="specs_values">
+                                            <div class="m_storage">4600Wh</div>
+                                            <div>Lithium LiFePO4</div>
+                                            <div>3.0kW</div>
+                                            <div style="height: 60px"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M5 12l5 5l10 -10" /></svg></div>
+                                        </div>
+                                    </div>
+                                    <div class="zarmatt_col zarmatt_BS_6_1 Pack4">
+                                        <div class="modal_name">Zermatt BS-6.1</div>
+                                        <div class="modal_desc">For Extended Outages<br> in Comfort</div>
+                                        <div class="Appliance_values" id="zarmatt_BS_6_1">
+                                        </div>
+                                        <div class="specs_values">
+                                            <div class="m_storage">6100Wh</div>
+                                            <div>Lithium LiFePO4</div>
+                                            <div>4.0kW</div>
+                                            <div style="height: 60px"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M5 12l5 5l10 -10" /></svg></div>
+                                        </div>
+                                    </div>
+                                    <div class="zarmatt_col zarmatt_BS_9_2 Pack5">
+                                        <div class="modal_name">Zermatt BS-9.2</div>
+                                        <div class="modal_desc">Uninterrupted Power,<br> Anytime, Anywhere!</div>
+                                        <div class="Appliance_values" id="zarmatt_BS_9_2">
+                                        </div>
+                                        <div class="specs_values">
+                                            <div class="m_storage">9200Wh</div>
+                                            <div>Lithium LiFePO4</div>
+                                            <div>4.0kW</div>
+                                            <div style="height: 60px"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M5 12l5 5l10 -10" /></svg></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="power_requirement">
+                            Your Energy Requirements: <span>3765 W</span>
+                        </div>
+                        <div class="disclaimer">Hours of single-appliance battery usage without recharge, starting from full battery</div>
+                    </div>
+                    <div class="block_table2" id="block_table2" style="display: none;">
+                        <div class="mtitle">
+                            Recommended Solar Panels
+                        </div>
+                        <div class="informative_">
+                            <span class="is_less">Your total energy consumption is less than we offer and the closest Solar Panel that would work for you is Zermatt SG-600</span>
+                            <span class="is_more">Your total energy consumption is mora than we offer and the closest Solar Panel that would work for you is Zermatt SG-4800</span>
+                        </div>
+                        <div class="table_resp">
+                            <div class="table_recommend">
+                                <div class="col_labels" style="padding-top: 40px;">
+                                    <div class="Appliance_labels">
+                                    </div>
+                                    <div class="specs_labels">
+                                        <div>Solar Panels Included</div>
+                                        <div>Fast Solar Charging</div>
+                                        <div>Battery Storage System</div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="recommended_columns">
+                                    <div class="zarmatt_col zarmatt_BS_1_5 Pack1">
+                                        <div class="modal_name">Zermatt SG-600</div>
+                                        <div class="Appliance_values" id="zarmatt_SG-600">
+                                        </div>
+
+                                        <div class="specs_values">
+                                            <div class="m_solar_p">2x 320Wp panels</div>
+                                            <div>3 hours</div>
+                                            <div>Zermatt BS-1.5</div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="zarmatt_col zarmatt_BS_2_3 Pack2">
+                                        <div class="modal_name">Zermatt SG-1200</div>
+                                        <div class="Appliance_values" id="zarmatt_SG-1200">
+                                        </div>
+
+                                        <div class="specs_values">
+                                            <div class="m_solar_p">3x 400Wp panels</div>
+                                            <div>3 hours</div>
+                                            <div>Zermatt BS-2.3</div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="zarmatt_col zarmatt_BS_4_6 Pack3">
+                                        <div class="modal_name">Zermatt SG-2400</div>
+                                        <div class="Appliance_values" id="zarmatt_SG-2400">
+                                        </div>
+
+                                        <div class="specs_values">
+                                            <div class="m_solar_p">6x 400Wp panels</div>
+                                            <div>3 hours</div>
+                                            <div>Zermatt BS-4.6</div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="zarmatt_col zarmatt_BS_6_1 Pack4" style="">
+                                        <div class="modal_name">Zermatt SG-3200</div>
+                                        <div class="Appliance_values" id="zarmatt_SG-3200">
+                                        </div>
+
+                                        <div class="specs_values">
+                                            <div class="m_solar_p">8x 400Wp panels</div>
+                                            <div>3 hours</div>
+                                            <div>Zermatt BS-6.1</div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="zarmatt_col zarmatt_BS_9_2 Pack5" style="">
+                                        <div class="modal_name">Zermatt SG-4800</div>
+                                        <div class="Appliance_values" id="zarmatt_SG-4800">
+                                        </div>
+                                        <div class="specs_values">
+                                            <div class="m_solar_p">12x 400Wp panels</div>
+                                            <div>3 hours</div>
+                                            <div>Zermatt BS-9.2</div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="disclaimer">Based on the medium daily North American solar radiation of <strong>4kWh/day/m<sup>2</sup></strong> and average day length of <strong>12 hours</strong></div>
+
+                        <div class="disclaimer"><strong>*</strong>Maximum hours Zermatt may power a single appliance per day, including a full 12-hour day of system recharging via included solar panels, starting from full battery.</div>
+                        <div class="contact">
+                            For Any Questions, Email @ info@tellco-europe.com
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+
+
+
+
+
+
+
+</body>
+
+</html>
