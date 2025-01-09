@@ -432,7 +432,7 @@
 }
 
 .specs_values,.block_table1 .Appliance_values{
-        border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
     overflow: hidden;
 }
 
@@ -561,7 +561,7 @@ button#add_appliance {
 }
 .block_table2 .Appliance_labels>div{
     min-height: 70px;
-        padding-left: 6px;
+    padding-left: 6px;
 }
 
 .block_table2 .Appliance_labels>div:nth-child(odd), .block_table2 .Appliance_values>div:nth-child(odd) {
@@ -576,7 +576,7 @@ span.m_from {
     font-size: 13px;
     font-style: italic;
     padding-top: 3px;
-        border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
 }
 span.m__val {
     font-weight: 600;
@@ -648,5 +648,306 @@ span.m__val {
 }
 
 
+
+/* Style the "i" icon */
+.tooltip-icon {
+    display: inline-block;
+    background-color: #1988ff;
+    color: #fff;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Tooltip container */
+.tooltip-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    background: #1c6195;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 10;
+    width: 100%;
+    height: fit-content;
+    color: #ffffff;
+    border-radius: 12px;
+
+}
+
+/* Show tooltip on hover or focus */
+.tooltip-icon:hover + .tooltip-content,
+.tooltip-icon:focus + .tooltip-content {
+    display: block;
+}
+
+
+
+
+/* Modern Contact Section Styles */
+.section {
+    padding: 100px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.row {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 80px;
+    padding: 0 20px;
+}
+
+.col {
+    flex: 1;
+}
+
+.contact-info h2 {
+    font-size: 3rem;
+    background: linear-gradient(45deg, #2d2e32, #e50124);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Form Container */
+.contact-form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 0.3s;
+}
+
+/* Input Groups */
+.form-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+    
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* Apply consistent border color to all form inputs and textareas */
+.input-field,
+.country-select,
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e50124; /* Updated border color */
+    border-radius: 12px;
+    font-size: 16px;
+    background: transparent;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+/* Focus effect to maintain consistent border color */
+/* Remove blue focus outline */
+.input-field:focus,
+textarea:focus,
+.country-select:focus {
+    outline: none; /* Removes the default browser outline */
+    border-color: #e50124; /* Keeps the red border on focus */
+    box-shadow: none; /* Removes any additional focus shadow */
+}
+
+
+/* Adjusting label behavior */
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 0 5px;
+    color: #666;
+    font-size: 16px;
+    transition: all 0.3s;
+    z-index: 0;
+    width: 100%;
+}
+
+.input-group textarea ~ label {
+    top: 20px;
+    transform: translateY(0);
+}
+
+.input-field:focus ~ label,
+.input-field:not(:placeholder-shown) ~ label,
+textarea:focus ~ label,
+textarea:not(:placeholder-shown) ~ label {
+    top: -10px;
+    left: 10px;
+    color: #e50124; /* Updated label color */
+    font-size: 14px;
+    z-index: 1;
+}
+
+/* Text Area Styling */
+.text-area textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Button Styling */
+.btn {
+    background: linear-gradient(45deg, #2d2e32, #e50124);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-text {
+    z-index: 1;
+    font-weight: 500;
+}
+
+.btn-icon {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Input Highlight Effect */
+.input-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    transition: all 0.3s;
+}
+
+.input-field:focus ~ .input-highlight,
+.country-select:focus ~ .input-highlight,
+textarea:focus ~ .input-highlight {
+    width: 100%;
+}
+
+/* Country Select Specific Styling */
+.country-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 15px;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .form-inputs {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info h2 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-form {
+        padding: 30px;
+    }
+}
+
+/* Focus Accessibility */
+.input-field:focus-visible,
+.country-select:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
 
 

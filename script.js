@@ -101,15 +101,33 @@ function createRow(index) {
                 </div>
             </div>
             <div class="m__col_3">
-                <div class="m__label">
-                    <div class="m__name">Power Rating (W)</div>
-                </div>
-                <div class="m__group">
-                    <input type="text" value="" placeholder="100 W" id="PowerRating_${index}" inputmode="numeric" class="autonumeric mm__input" data-symb=" W" data-min="0" data-max="100000" data-step="1" data-decimal="0">
-                    <button tabindex="-1" class="btn-helper btn-plus"></button>
-                    <button tabindex="-1" class="btn-helper btn-minus"></button>
-                </div>
+    <div class="m__label">
+        <div class="m__name">
+            Power Rating (W)
+            <span class="tooltip-icon" tabindex="0">i</span>
+            <div class="tooltip-content">
+                The power rating represents the maximum electrical power this device can handle, measured in Watts (W).
             </div>
+        </div>
+    </div>
+    <div class="m__group">
+        <input
+            type="text"
+            value=""
+            placeholder="100 W"
+            id="PowerRating_${index}"
+            inputmode="numeric"
+            class="autonumeric mm__input"
+            data-symb=" W"
+            data-min="0"
+            data-max="100000"
+            data-step="1"
+            data-decimal="0"
+        >
+        <button tabindex="-1" class="btn-helper btn-plus"></button>
+        <button tabindex="-1" class="btn-helper btn-minus"></button>
+    </div>
+</div>
             <div class="m__col_3">
                 <div class="m__label">
                     <div class="m__name">Hours of use</div>
