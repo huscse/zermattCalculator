@@ -431,7 +431,7 @@
     background: white;
 }
 
-.specs_values,.block_table1 .Appliance_values{
+.specs_values,.block_table1, .Appliance_values{
     border-radius: 0 0 6px 6px;
     overflow: hidden;
 }
@@ -568,15 +568,14 @@ button#add_appliance {
     background: #efefef
 }
 
-
-span.m_from {
+span.m_nval {
     display: block;
     width: 100%;
     text-align: center;
     font-size: 13px;
-    font-style: italic;
-    padding-top: 3px;
+    padding-top: 9px;
     border-top: 1px solid #e0e0e0;
+
 }
 span.m__val {
     font-weight: 600;
