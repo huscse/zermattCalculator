@@ -421,24 +421,24 @@ function MCalculate() {
                 );
                
                 if (pack.name == "Pack1") {
-                    document.querySelector('.block_table2 #zermatt_SG-600').innerHTML = `<div><span class="m__val">${results.solar_charging_time} hours</span><span class="m_nval">${results.no_charge_time} hours</span></div>`;
-                    document.querySelector('.block_table1 #zermatt_BS_1_5').innerHTML = `<div>${results.no_charge_time} hours</div>`;
+                    document.querySelector('.block_table2 #zermatt_SG-600').innerHTML = `<div><span class="m__val">${results.solar_charging_time} days</span><span class="m_nval">${results.no_charge_time} days</span></div>`;
+                    document.querySelector('.block_table1 #zermatt_BS_1_5').innerHTML = `<div>${results.no_charge_time} days</div>`;
                 }
                 if (pack.name == "Pack2") {
-                    document.querySelector('.block_table2 #zermatt_SG-1200').innerHTML = `<div><span class="m__val">${results.solar_charging_time} hours</span><span class="m_nval">${results.no_charge_time} hours</span></div>`;
-                    document.querySelector('.block_table1 #zermatt_BS_2_3').innerHTML = `<div>${results.no_charge_time} hours</div>`;
+                    document.querySelector('.block_table2 #zermatt_SG-1200').innerHTML = `<div><span class="m__val">${results.solar_charging_time} days</span><span class="m_nval">${results.no_charge_time} days</span></div>`;
+                    document.querySelector('.block_table1 #zermatt_BS_2_3').innerHTML = `<div>${results.no_charge_time} days</div>`;
                 }
                 if (pack.name == "Pack3") {
-                    document.querySelector('.block_table2 #zermatt_SG-2400').innerHTML = `<div><span class="m__val">${results.solar_charging_time} hours</span><span class="m_nval">${results.no_charge_time} hours</span></div>`;
-                    document.querySelector('.block_table1 #zermatt_BS_4_6').innerHTML = `<div>${results.no_charge_time} hours</div>`;
+                    document.querySelector('.block_table2 #zermatt_SG-2400').innerHTML = `<div><span class="m__val">${results.solar_charging_time} days</span><span class="m_nval">${results.no_charge_time} days</span></div>`;
+                    document.querySelector('.block_table1 #zermatt_BS_4_6').innerHTML = `<div>${results.no_charge_time} days</div>`;
                 }
                 if (pack.name == "Pack4") {
-                    document.querySelector('.block_table2 #zermatt_SG-3200').innerHTML = `<div><span class="m__val">${results.solar_charging_time} hours</span><span class="m_nval">${results.no_charge_time} hours</span></div>`;
-                    document.querySelector('.block_table1 #zermatt_BS_6_1').innerHTML = `<div>${results.no_charge_time} hours</div>`;
+                    document.querySelector('.block_table2 #zermatt_SG-3200').innerHTML = `<div><span class="m__val">${results.solar_charging_time} days</span><span class="m_nval">${results.no_charge_time} days</span></div>`;
+                    document.querySelector('.block_table1 #zermatt_BS_6_1').innerHTML = `<div>${results.no_charge_time} days</div>`;
                 }
                 if (pack.name == "Pack5") {
-                    document.querySelector('.block_table2 #zermatt_SG-4800').innerHTML = `<div><span class="m__val">${results.solar_charging_time} hours</span><span class="m_nval">${results.no_charge_time} hours</span></div>`;
-                    document.querySelector('.block_table1 #zermatt_BS_9_2').innerHTML = `<div>${results.no_charge_time} hours</div>`;
+                    document.querySelector('.block_table2 #zermatt_SG-4800').innerHTML = `<div><span class="m__val">${results.solar_charging_time} days</span><span class="m_nval">${results.no_charge_time} days</span></div>`;
+                    document.querySelector('.block_table1 #zermatt_BS_9_2').innerHTML = `<div>${results.no_charge_time} days</div>`;
                 }
 
             }
