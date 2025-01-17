@@ -1,11 +1,13 @@
+
 // Define packs
 const packs = [
-    { name: "Pack1", batteryStorageModel: 1500, solarPanelCoverage: 3.32 },
-    { name: "Pack2", batteryStorageModel: 2300, solarPanelCoverage: 6.24 },
-    { name: "Pack3", batteryStorageModel: 4600, solarPanelCoverage: 12.48 },
-    { name: "Pack4", batteryStorageModel: 6100, solarPanelCoverage: 16.64 },
-    { name: "Pack5", batteryStorageModel: 9200, solarPanelCoverage: 24.96 }
+    { name: "Pack1", batteryStorageModel: 1500, electricityGeneratedW: 2560 },
+    { name: "Pack2", batteryStorageModel: 2300, electricityGeneratedW: 4800 },
+    { name: "Pack3", batteryStorageModel: 4600, electricityGeneratedW: 9600 },
+    { name: "Pack4", batteryStorageModel: 6100, electricityGeneratedW: 12800 },
+    { name: "Pack5", batteryStorageModel: 9200, electricityGeneratedW: 19200 }
 ];
+
 
 const appliances = [
     { appliance: 'Blender', power: 500, usage: 0.1 },
@@ -71,11 +73,11 @@ const appliances = [
     { appliance: 'Vacuum', power: 1000, usage: 1 }
 ];
 
+
 let rowCount = 0; // Start from 0
 
 
 document.addEventListener('DOMContentLoaded', function() {
-
 
     // Create the first row
     addApplianceRow();
@@ -83,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set up the Add Appliance button
     document.getElementById('add_appliance').addEventListener('click', addApplianceRow);
 });
+
 
 function createRow(index) {
     let rowElement = document.createElement('div');
@@ -147,6 +150,7 @@ function createRow(index) {
     return rowElement;
 }
 
+
 function addApplianceRow() {
     rowCount++;
 
@@ -162,6 +166,7 @@ function addApplianceRow() {
     MCalculate();
     checkRemoveButtons();
 }
+
 
 function initializeRow(rowElement, index) {
     // Get references to inputs
@@ -210,6 +215,7 @@ function initializeRow(rowElement, index) {
         }
     });
 
+
     // Add event listener to the select input to auto-fill the inputs
     selectInput.addEventListener('change', function() {
         let selectedApplianceName = selectInput.value;
@@ -226,6 +232,7 @@ function initializeRow(rowElement, index) {
         }
     });
 
+
     // Add event listener to the remove button
     const removeButton = rowElement.querySelector('.remove_appliance');
     removeButton.addEventListener('click', function() {
@@ -235,6 +242,7 @@ function initializeRow(rowElement, index) {
     // Initially hide the remove button if it's the first row
     checkRemoveButtons();
 }
+
 
 function addIncrementDecrementListeners(inputElement) {
     const minusBtn = inputElement.parentElement.querySelector(".btn-minus");
@@ -259,6 +267,7 @@ function addIncrementDecrementListeners(inputElement) {
     });
 }
 
+
 function removeApplianceRow(rowElement) {
     if (document.querySelectorAll('.m__rows_section .m__row').length > 1) {
         rowElement.parentNode.removeChild(rowElement);
@@ -268,6 +277,7 @@ function removeApplianceRow(rowElement) {
         alert("You must have at least one appliance.");
     }
 }
+
 
 function checkRemoveButtons() {
     let rows = document.querySelectorAll('.m__rows_section .m__row');
@@ -281,6 +291,7 @@ function checkRemoveButtons() {
         });
     }
 }
+
 
 document.getElementById('removeAllAppliances').addEventListener('click', function () {
     // Remove all rows except the default one
@@ -300,6 +311,7 @@ document.getElementById('removeAllAppliances').addEventListener('click', functio
     // Re-check visibility of remove buttons
     checkRemoveButtons();
 });
+
 
 function resetDefaultRow() {
     const firstRow = document.querySelector('.m__rows_section .m__row:first-child');
@@ -325,7 +337,6 @@ function resetDefaultRow() {
 }
 
 
-
 function updateDivClass(energy) {
     // Get the div
     const div = document.getElementById('block_table1');
@@ -339,25 +350,26 @@ function updateDivClass(energy) {
     div2.className = `block_table2 ${recommendedPack.name}`;
 }
 
+
 function MCalculate() {
     let totalEnergy = 0;
 
     document.querySelector('.block_table1 .Appliance_labels').innerHTML = ``;
-    document.querySelector('.block_table1 #zarmatt_BS_1_5').innerHTML = ``;
-    document.querySelector('.block_table1 #zarmatt_BS_2_3').innerHTML = ``;
-    document.querySelector('.block_table1 #zarmatt_BS_4_6').innerHTML = ``;
-    document.querySelector('.block_table1 #zarmatt_BS_6_1').innerHTML = ``;
-    document.querySelector('.block_table1 #zarmatt_BS_9_2').innerHTML = ``;
+    document.querySelector('.block_table1 #zermatt_BS_1_5').innerHTML = ``;
+    document.querySelector('.block_table1 #zermatt_BS_2_3').innerHTML = ``;
+    document.querySelector('.block_table1 #zermatt_BS_4_6').innerHTML = ``;
+    document.querySelector('.block_table1 #zermatt_BS_6_1').innerHTML = ``;
+    document.querySelector('.block_table1 #zermatt_BS_9_2').innerHTML = ``;
 
     document.querySelector('.block_table2 .Appliance_labels').innerHTML = ``;
-    document.querySelector('.block_table2 #zarmatt_SG-600').innerHTML = ``;
-    document.querySelector('.block_table2 #zarmatt_SG-1200').innerHTML = ``;
-    document.querySelector('.block_table2 #zarmatt_SG-2400').innerHTML = ``;
-    document.querySelector('.block_table2 #zarmatt_SG-3200').innerHTML = ``;
-    document.querySelector('.block_table2 #zarmatt_SG-4800').innerHTML = ``;
+    document.querySelector('.block_table2 #zermatt_SG-600').innerHTML = ``;
+    document.querySelector('.block_table2 #zermatt_SG-1200').innerHTML = ``;
+    document.querySelector('.block_table2 #zermatt_SG-2400').innerHTML = ``;
+    document.querySelector('.block_table2 #zermatt_SG-3200').innerHTML = ``;
+    document.querySelector('.block_table2 #zermatt_SG-4800').innerHTML = ``;
 
-    let rows = document.querySelectorAll('.m__rows_section .m__row');
-
+        let rows = document.querySelectorAll('.m__rows_section .m__row');
+    
     rows.forEach(function(row) {
 
         let appliance_val = row.querySelector('[id^="Appliance_"]').value;
@@ -366,37 +378,33 @@ function MCalculate() {
 
         let powerRating = parseFloat(AutoNumeric.getNumber(powerRatingInput)) || 0;
         let hoursUse = parseFloat(AutoNumeric.getNumber(hoursUseInput)) || 0;
-        if (appliance_val != '' && powerRating > 0 && hoursUse > 0) {
-            document.querySelector('.block_table1 .Appliance_labels').innerHTML += `<div>${appliance_val}</div>`;
-            document.querySelector('.block_table2 .Appliance_labels').innerHTML += `<div>${appliance_val}</div>`;
-        }
 
-
+        //Combined energy usage of all appliances in one day. Calcualtes one at a time and adds to total energy
         totalEnergy += powerRating * hoursUse;
+
     });
-
-
+    
     updateDivClass(totalEnergy);
-
 
     document.querySelector('.block_table1 .informative_').classList.remove('m_less');
     document.querySelector('.block_table1 .informative_').classList.remove('m_more');
     document.querySelector('.block_table2 .informative_').classList.remove('m_less');
     document.querySelector('.block_table2 .informative_').classList.remove('m_more');
+
     if (totalEnergy < 1500) {
         document.querySelector('.block_table1 .informative_').classList.add('m_less');
         document.querySelector('.block_table2 .informative_').classList.add('m_less');
     }
+    
     if (totalEnergy > 9200) {
         document.querySelector('.block_table1 .informative_').classList.add('m_more');
         document.querySelector('.block_table2 .informative_').classList.add('m_more');
     }
-
-
+    
 
     packs.forEach(pack => {
 
-
+        // Parsing each row of user input appliances
         rows.forEach(function(row) {
             let appliance_val = row.querySelector('[id^="Appliance_"]').value;
             let powerRatingInput = row.querySelector('[id^="PowerRating_"]');
@@ -407,46 +415,43 @@ function MCalculate() {
 
             if (appliance_val != '' && powerRating > 0 && hoursUse > 0) {
 
-
                 const results = calculatePowerAndTime(
-                    powerRating,
-                    hoursUse,
+                    totalEnergy,
                     pack.batteryStorageModel,
-                    pack.solarPanelCoverage
+                    pack.electricityGeneratedW
                 );
-
+               
                 if (pack.name == "Pack1") {
-                    document.querySelector('.block_table2 #zarmatt_SG-600').innerHTML += `<div><span class="m__val">${results.new_result}</span><span class="m_from">from ${results.tbl1_hours} hours</span></div>`;
-                    document.querySelector('.block_table1 #zarmatt_BS_1_5').innerHTML += `<div>${results.tbl1_hours} hours</div>`;
+                    document.querySelector('.block_table2 #zermatt_SG-600').innerHTML = `<div><span class="m__val">${results.solar_charging_time} days</span><span class="m_nval">${results.no_charge_time} days</span></div>`;
+                    document.querySelector('.block_table1 #zermatt_BS_1_5').innerHTML = `<div>${results.no_charge_time} days</div>`;
                 }
                 if (pack.name == "Pack2") {
-                    document.querySelector('.block_table2 #zarmatt_SG-1200').innerHTML += `<div><span class="m__val">${results.new_result}</span><span class="m_from">from ${results.tbl1_hours} hours</span></div>`;
-                    document.querySelector('.block_table1 #zarmatt_BS_2_3').innerHTML += `<div>${results.tbl1_hours} hours</div>`;
+                    document.querySelector('.block_table2 #zermatt_SG-1200').innerHTML = `<div><span class="m__val">${results.solar_charging_time} days</span><span class="m_nval">${results.no_charge_time} days</span></div>`;
+                    document.querySelector('.block_table1 #zermatt_BS_2_3').innerHTML = `<div>${results.no_charge_time} days</div>`;
                 }
                 if (pack.name == "Pack3") {
-                    document.querySelector('.block_table2 #zarmatt_SG-2400').innerHTML += `<div><span class="m__val">${results.new_result}</span><span class="m_from">from ${results.tbl1_hours} hours</span></div>`;
-                    document.querySelector('.block_table1 #zarmatt_BS_4_6').innerHTML += `<div>${results.tbl1_hours} hours</div>`;
+                    document.querySelector('.block_table2 #zermatt_SG-2400').innerHTML = `<div><span class="m__val">${results.solar_charging_time} days</span><span class="m_nval">${results.no_charge_time} days</span></div>`;
+                    document.querySelector('.block_table1 #zermatt_BS_4_6').innerHTML = `<div>${results.no_charge_time} days</div>`;
                 }
                 if (pack.name == "Pack4") {
-                    document.querySelector('.block_table2 #zarmatt_SG-3200').innerHTML += `<div><span class="m__val">${results.new_result}</span><span class="m_from">from ${results.tbl1_hours} hours</span></div>`;
-                    document.querySelector('.block_table1 #zarmatt_BS_6_1').innerHTML += `<div>${results.tbl1_hours} hours</div>`;
+                    document.querySelector('.block_table2 #zermatt_SG-3200').innerHTML = `<div><span class="m__val">${results.solar_charging_time} days</span><span class="m_nval">${results.no_charge_time} days</span></div>`;
+                    document.querySelector('.block_table1 #zermatt_BS_6_1').innerHTML = `<div>${results.no_charge_time} days</div>`;
                 }
                 if (pack.name == "Pack5") {
-                    document.querySelector('.block_table2 #zarmatt_SG-4800').innerHTML += `<div><span class="m__val">${results.new_result}</span><span class="m_from">from ${results.tbl1_hours} hours</span></div>`;
-                    document.querySelector('.block_table1 #zarmatt_BS_9_2').innerHTML += `<div>${results.tbl1_hours} hours</div>`;
+                    document.querySelector('.block_table2 #zermatt_SG-4800').innerHTML = `<div><span class="m__val">${results.solar_charging_time} days</span><span class="m_nval">${results.no_charge_time} days</span></div>`;
+                    document.querySelector('.block_table1 #zermatt_BS_9_2').innerHTML = `<div>${results.no_charge_time} days</div>`;
                 }
+
             }
 
-
-        });
-
-
-
-
-        /*console.log(`Results for ${pack.name}:`);
-        console.log(`Results for ${appliance_val}:`);
-        console.log(`Power_m: ${results.Power_m} W/hour`);
-        console.log(`Applience_power_time: ${results.Applience_power_time} hours\n`);*/
+        })
+        
+        
+        // console.log(`Results for ${pack.name}:`);
+        // console.log(`Results for ${appliance_val}:`);
+        // console.log(`Power_m: ${results.Power_m} W/hour`);
+        // console.log(`Applience_power_time: ${results.Applience_power_time} hours\n`);
+        
     });
 
     // Update the total energy display
@@ -457,28 +462,25 @@ function MCalculate() {
 }
 
 
-function calculatePowerAndTime(powerRating, hoursOfUse, batteryStorageModel, solarPanelCoverage) {
+function calculatePowerAndTime(totalEnergy, batteryStorageModel, electricityGeneratedW) {
     // Constants
-    const CONSTANT = 0.16667;
     const BATTERY_EFFICIENCY = 0.8;
+    let totalEnergyPerDay = totalEnergy;
 
-    // Calculate Power_m
-    let part1 = (powerRating - (CONSTANT * 1000 * solarPanelCoverage)) * 0.5;
-    if (part1 < 0) {
-        part1 = 0; // Set part1 to 0 if it's negative
-    }
-    let part2 = powerRating * 0.5;
-    let powerM = part1 + part2;
+    // Average hourly usage based on power rating of appliances and how often user plans to use each appliance per day. "wieghted average."
+    let totalEnergyPerHour = totalEnergyPerDay / 24; 
 
-    // Calculate Applience_power_time
-    let appliancePowerTime = (batteryStorageModel * BATTERY_EFFICIENCY) / powerM;
+    // Calculate time a zermatt system can power all appliances without recharge
+    let noChargeTime = (batteryStorageModel * BATTERY_EFFICIENCY) / totalEnergyPerDay;
 
+    // Calculate time a zermatt system can power all appliances with recharging
+    let withChargeTime = (electricityGeneratedW - (batteryStorageModel * BATTERY_EFFICIENCY)) / totalEnergyPerDay;
 
-    let tbl1_Hours_val = (1000 / powerRating) * (batteryStorageModel / 1000) * BATTERY_EFFICIENCY;
-
-    console.log(powerRating, hoursOfUse, batteryStorageModel, solarPanelCoverage);
+    /*
+    console.log(powerRating, hoursOfUse, batteryStorageModel, electricityGeneratedW);
+   
     let t_hours_of_use = (batteryStorageModel * 0.8) / powerRating;
-    let ElectricityGenerated = solarPanelCoverage * CONSTANT * 1000;
+    let ElectricityGenerated = electricityGeneratedW;
     let new_result = "";
     if (t_hours_of_use >= 12 && ElectricityGenerated > powerRating) {
         new_result = "24/7 Continuous<br>Operation Ready";
@@ -496,25 +498,24 @@ function calculatePowerAndTime(powerRating, hoursOfUse, batteryStorageModel, sol
             new_result = "Hours of Use<br>until Sundown: " + new_hours_use.toFixed(1) + " hours*";
         }
     }
-
+    */
 
     // Return the results
     return {
-        Power_m: powerM.toFixed(1), // Rounded to 2 decimal places
-        Applience_power_time: appliancePowerTime.toFixed(1), // Rounded to 2 decimal places
-        tbl1_hours: tbl1_Hours_val.toFixed(1),
-        new_result: new_result
+        no_charge_time: noChargeTime.toFixed(1), // Rounded to 2 decimal places
+        solar_charging_time: withChargeTime.toFixed(1)
     };
 }
-/*
 
-function calculatePowerAndTime2(powerRating, hoursOfUse, batteryStorageModel, solarPanelCoverage) {
+
+/*
+function calculatePowerAndTime2(powerRating, hoursOfUse, batteryStorageModel, electricityGeneratedW) {
     // Constants
     const CONSTANT = 0.16667;
     const BATTERY_EFFICIENCY = 0.8;
 
     // Calculate Power_m
-    let part1 = (powerRating - (CONSTANT * 1000 * solarPanelCoverage)) * 0.5;
+    let part1 = (powerRating - (CONSTANT * 1000 * electricityGeneratedW)) * 0.5;
     if (part1 < 0) {
         part1 = 0; // Set part1 to 0 if it's negative
     }
@@ -531,13 +532,13 @@ function calculatePowerAndTime2(powerRating, hoursOfUse, batteryStorageModel, so
     console.log("less");
     // Return the results
     return {
-        Power_m: powerM.toFixed(1), // Rounded to 2 decimal places
+       // Power_m: powerM.toFixed(1), // Rounded to 2 decimal places
         Applience_power_time: appliancePowerTime.toFixed(1), // Rounded to 2 decimal places
         tbl1_hours: tbl1_Hours_val.toFixed(1)
     };
 }
-
 */
+
 
 function MShow() {
     let has_empty = 0;
@@ -561,7 +562,6 @@ function MShow() {
     if (has_empty) {
         return 0;
     }
-
 
     var blockTable1 = document.querySelector('.block_table1');
     var blockTable2 = document.querySelector('.block_table2');

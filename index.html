@@ -36,7 +36,257 @@
     }
 </style>
 
+<div class="calculator-guide">
+    <div class="guide-header">
+        <h1>How to Use the Energy Calculator</h1>
+        <div class="underline"></div>
+    </div>
+    
+    <div class="steps-container">
+        <div class="step-card">
+            <div class="step-icon">1</div>
+            <div class="step-content">
+                <h2>Add Your Appliances</h2>
+                <p>Click the "Add Appliance" button for each device you want to power.</p>
+                <div class="hover-indicator">
+                </div>
+            </div>
+        </div>
 
+        <div class="step-card">
+            <div class="step-icon">2</div>
+            <div class="step-content">
+                <h2>Enter Appliance Details</h2>
+                <p>For each appliance, you'll need:</p>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="detail-icon">⚡</div>
+                        <div>
+                            <h3>Power Rating (Watts)</h3>
+                            <p>Found on your appliance's label or manual</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">⏱️</div>
+                        <div>
+                            <h3>Hours of Use</h3>
+                            <p>How many hours per day you plan to use it</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-icon">3</div>
+            <div class="step-content">
+                <h2>View Recommendations</h2>
+                <p>Click "See Solutions" to find the right Zermatt system for your needs.</p>
+                <button class="solutions-button">
+                    See Solutions
+                    <svg class="arrow-icon" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer-card">
+        <div class="disclaimer-icon">ℹ️</div>
+        <div class="disclaimer-content">
+            <h2>Important Notes</h2>
+            <p>This calculator provides estimates based on your inputs. Actual energy consumption may vary. Results are for reference only. Please consult with a qualified professional for your specific needs.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .calculator-guide {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    .guide-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .guide-header h1 {
+        font-size: 2.5rem;
+        color: #1a1a1a;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .underline {
+        height: 4px;
+        width: 60px;
+    background: linear-gradient(45deg, #2d2e32, #e50124);
+        margin: 0 auto;
+        border-radius: 2px;
+    }
+
+    .steps-container {
+        display: grid;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .step-card {
+        display: flex;
+        gap: 1.5rem;
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
+    }
+
+    .step-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(45deg, #2d2e32, #e50124);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        flex-shrink: 0;
+    }
+
+    .step-content {
+        flex: 1;
+    }
+
+    .step-content h2 {
+        font-size: 1.5rem;
+        color: #1a1a1a;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+    }
+
+    .step-content p {
+        color: #4a5568;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .details-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .detail-item {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 1rem;
+        background: #f8fafc;
+        border-radius: 12px;
+    }
+
+    .detail-icon {
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    .detail-item h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: #1a1a1a;
+    }
+
+    .detail-item p {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    .action-button, .solutions-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(45deg, #2d2e32, #e50124);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .action-button:hover, .solutions-button:hover {
+        background: linear-gradient(45deg, #2d2e32, #e50124);
+        transform: translateY(-2px);
+    }
+
+    .disclaimer-card {
+        background: #f8fafc;
+        padding: 1.5rem;
+        border-radius: 12px;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        border: 1px solid #e5e7eb;
+    }
+
+    .disclaimer-icon {
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    .disclaimer-content h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #1a1a1a;
+    }
+
+    .disclaimer-content p {
+        color: #4a5568;
+        line-height: 1.6;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .calculator-guide {
+            padding: 1rem;
+        }
+
+        .guide-header h1 {
+            font-size: 2rem;
+        }
+
+        .step-card {
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+
+        .step-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 1.25rem;
+        }
+
+        .details-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
     <div id="m_calculator_content">
         <div class="m__calculator" style="padding-top:30px; padding-bottom: 30px">
             <div class="m__wrap">
@@ -75,12 +325,12 @@
                     </div>
                     <div class="block_table1" id="block_table1" style="display: none;">
                         <div class="mtitle">
-                            Recommended Zermatt System
+                            Recommended Zermatt Battery Storage System
                         </div>
 
                         <div class="informative_">
                             <span class="is_less">Your total energy consumption is less than we offer and the closest model that would work for you is Zermatt BS-1.5 </span>
-                            <span class="is_more">Your total energy consumption is mora than we offer and the closest model that would work for you is Zermatt BS-9.2 </span>
+                            <span class="is_more">Your total energy consumption is more than we offer and the closest model that would work for you is Zermatt BS-9.2 </span>
                         </div>
                         <div class="table_resp">
                             <div class="table_recommend">
@@ -88,17 +338,18 @@
                                     <div class="Appliance_labels">
                                     </div>
                                     <div class="specs_labels">
-                                        <div>Storage</div>
+                                        <div>Operation</div>
+                                        <div>Battery Storage</div>
                                         <div>Battery Type</div>
                                         <div>Inverter</div>
                                         <div style="height: 60px">Rechargeable via <br> Grid Voltage</div>
                                     </div>
                                 </div>
                                 <div class="recommended_columns">
-                                    <div class="zarmatt_col zarmatt_BS_1_5 Pack1">
+                                    <div class="zermatt_col zermatt_BS_1_5 Pack1">
                                         <div class="modal_name">Zermatt BS-1.5</div>
                                         <div class="modal_desc">Essential Power<br>at a Low Cost!</div>
-                                        <div class="Appliance_values" id="zarmatt_BS_1_5">
+                                        <div class="Appliance_values" id="zermatt_BS_1_5">
                                         </div>
                                         <div class="specs_values">
                                             <div class="m_storage">1500Wh</div>
@@ -109,10 +360,10 @@
                                                     <path d="M5 12l5 5l10 -10" /></svg></div>
                                         </div>
                                     </div>
-                                    <div class="zarmatt_col zarmatt_BS_2_3 Pack2">
+                                    <div class="zermatt_col zermatt_BS_2_3 Pack2">
                                         <div class="modal_name">Zermatt BS-2.3</div>
                                         <div class="modal_desc">Backup Power<br>on a Budget!</div>
-                                        <div class="Appliance_values" id="zarmatt_BS_2_3">
+                                        <div class="Appliance_values" id="zermatt_BS_2_3">
                                         </div>
                                         <div class="specs_values">
                                             <div class="m_storage">2300Wh</div>
@@ -123,10 +374,10 @@
                                                     <path d="M5 12l5 5l10 -10" /></svg></div>
                                         </div>
                                     </div>
-                                    <div class="zarmatt_col zarmatt_BS_4_6 Pack3">
+                                    <div class="zermatt_col zermatt_BS_4_6 Pack3">
                                         <div class="modal_name">Zermatt BS-4.6</div>
                                         <div class="modal_desc">Battery Storage Precisely<br>Meets Your Needs!</div>
-                                        <div class="Appliance_values" id="zarmatt_BS_4_6">
+                                        <div class="Appliance_values" id="zermatt_BS_4_6">
                                         </div>
                                         <div class="specs_values">
                                             <div class="m_storage">4600Wh</div>
@@ -137,10 +388,10 @@
                                                     <path d="M5 12l5 5l10 -10" /></svg></div>
                                         </div>
                                     </div>
-                                    <div class="zarmatt_col zarmatt_BS_6_1 Pack4">
+                                    <div class="zermatt_col zermatt_BS_6_1 Pack4">
                                         <div class="modal_name">Zermatt BS-6.1</div>
                                         <div class="modal_desc">For Extended Outages<br> in Comfort</div>
-                                        <div class="Appliance_values" id="zarmatt_BS_6_1">
+                                        <div class="Appliance_values" id="zermatt_BS_6_1">
                                         </div>
                                         <div class="specs_values">
                                             <div class="m_storage">6100Wh</div>
@@ -151,10 +402,10 @@
                                                     <path d="M5 12l5 5l10 -10" /></svg></div>
                                         </div>
                                     </div>
-                                    <div class="zarmatt_col zarmatt_BS_9_2 Pack5">
+                                    <div class="zermatt_col zermatt_BS_9_2 Pack5">
                                         <div class="modal_name">Zermatt BS-9.2</div>
                                         <div class="modal_desc">Uninterrupted Power,<br> Anytime, Anywhere!</div>
-                                        <div class="Appliance_values" id="zarmatt_BS_9_2">
+                                        <div class="Appliance_values" id="zermatt_BS_9_2">
                                         </div>
                                         <div class="specs_values">
                                             <div class="m_storage">9200Wh</div>
@@ -175,11 +426,11 @@
                     </div>
                     <div class="block_table2" id="block_table2" style="display: none;">
                         <div class="mtitle">
-                            Recommended Solar Panels
+                            Recommended Zermatt Off-Grid Solar Energy Storage Station
                         </div>
                         <div class="informative_">
                             <span class="is_less">Your total energy consumption is less than we offer and the closest Solar Panel that would work for you is Zermatt SG-600</span>
-                            <span class="is_more">Your total energy consumption is mora than we offer and the closest Solar Panel that would work for you is Zermatt SG-4800</span>
+                            <span class="is_more">Your total energy consumption is more than we offer and the closest Solar Panel that would work for you is Zermatt SG-4800</span>
                         </div>
                         <div class="table_resp">
                             <div class="table_recommend">
@@ -187,6 +438,8 @@
                                     <div class="Appliance_labels">
                                     </div>
                                     <div class="specs_labels">
+                                        <div>* Daytime Operation</div>
+                                        <div>* Nighttime Operation</div>
                                         <div>Solar Panels Included</div>
                                         <div>Fast Solar Charging</div>
                                         <div>Battery Storage System</div>
@@ -194,9 +447,9 @@
                                     
                                 </div>
                                 <div class="recommended_columns">
-                                    <div class="zarmatt_col zarmatt_BS_1_5 Pack1">
+                                    <div class="zermatt_col zermatt_BS_1_5 Pack1">
                                         <div class="modal_name">Zermatt SG-600</div>
-                                        <div class="Appliance_values" id="zarmatt_SG-600">
+                                        <div class="Appliance_values" id="zermatt_SG-600">
                                         </div>
 
                                         <div class="specs_values">
@@ -206,9 +459,9 @@
                                         </div>
                                         
                                     </div>
-                                    <div class="zarmatt_col zarmatt_BS_2_3 Pack2">
+                                    <div class="zermatt_col zermatt_BS_2_3 Pack2">
                                         <div class="modal_name">Zermatt SG-1200</div>
-                                        <div class="Appliance_values" id="zarmatt_SG-1200">
+                                        <div class="Appliance_values" id="zermatt_SG-1200">
                                         </div>
 
                                         <div class="specs_values">
@@ -218,9 +471,9 @@
                                         </div>
                                         
                                     </div>
-                                    <div class="zarmatt_col zarmatt_BS_4_6 Pack3">
+                                    <div class="zermatt_col zermatt_BS_4_6 Pack3">
                                         <div class="modal_name">Zermatt SG-2400</div>
-                                        <div class="Appliance_values" id="zarmatt_SG-2400">
+                                        <div class="Appliance_values" id="zermatt_SG-2400">
                                         </div>
 
                                         <div class="specs_values">
@@ -230,9 +483,9 @@
                                         </div>
                                         
                                     </div>
-                                    <div class="zarmatt_col zarmatt_BS_6_1 Pack4" style="">
+                                    <div class="zermatt_col zermatt_BS_6_1 Pack4" style="">
                                         <div class="modal_name">Zermatt SG-3200</div>
-                                        <div class="Appliance_values" id="zarmatt_SG-3200">
+                                        <div class="Appliance_values" id="zermatt_SG-3200">
                                         </div>
 
                                         <div class="specs_values">
@@ -242,10 +495,11 @@
                                         </div>
                                         
                                     </div>
-                                    <div class="zarmatt_col zarmatt_BS_9_2 Pack5" style="">
+                                    <div class="zermatt_col zermatt_BS_9_2 Pack5" style="">
                                         <div class="modal_name">Zermatt SG-4800</div>
-                                        <div class="Appliance_values" id="zarmatt_SG-4800">
+                                        <div class="Appliance_values" id="zermatt_SG-4800">
                                         </div>
+                                        
                                         <div class="specs_values">
                                             <div class="m_solar_p">12x 400Wp panels</div>
                                             <div>3 hours</div>

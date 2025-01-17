@@ -1,3 +1,4 @@
+
 .m__calculator *,
 .m__calculator ::after,
 .m__calculator ::before {
@@ -186,7 +187,7 @@
     padding: 6px 26px;
     border: 0;
     color: #ffffff;
-    background-color: #e50124;
+    background: linear-gradient(45deg, #2d2e32, #e50124);
     transition: box-shadow .4s, background-color .3s;
     font-family: 'Inter';
     font-size: 16px;
@@ -431,7 +432,7 @@
     background: white;
 }
 
-.specs_values,.block_table1 .Appliance_values{
+.specs_values,.block_table1, .Appliance_values{
     border-radius: 0 0 6px 6px;
     overflow: hidden;
 }
@@ -568,15 +569,14 @@ button#add_appliance {
     background: #efefef
 }
 
-
-span.m_from {
+span.m_nval {
     display: block;
     width: 100%;
     text-align: center;
     font-size: 13px;
-    font-style: italic;
-    padding-top: 3px;
+    padding-top: 9px;
     border-top: 1px solid #e0e0e0;
+
 }
 span.m__val {
     font-weight: 600;
@@ -621,7 +621,7 @@ span.m__val {
     align-items: center;
     justify-content: start;
     font-weight: 600;
-    background-color: #e50124;
+    background: linear-gradient(45deg, #2d2e32, #e50124);
     color: #ffffff;
     min-width: 200px;
     cursor: pointer;
@@ -644,7 +644,7 @@ span.m__val {
 .delete-icon svg {
     width: 16px;
     height: 16px;
-    stroke: red; /* Change color if needed */
+    background: linear-gradient(45deg, #2d2e32, #e50124);
 }
 
 
@@ -949,5 +949,3 @@ textarea:focus-visible,
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
-
-
