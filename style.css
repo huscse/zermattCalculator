@@ -693,7 +693,6 @@ span.m__val {
 
 
 
-
 /* Modern Contact Section Styles */
 .section {
     padding: 100px 0;
@@ -741,16 +740,15 @@ span.m__val {
 /* Input Groups */
 .form-inputs {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    grid-template-columns: 1fr; /* Changed from repeat(2, 1fr) to make fields full width */
+    gap: 12px;
     margin-bottom: 25px;
     width: 100%;
-    
 }
 
 .input-group {
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 /* Apply consistent border color to all form inputs and textareas */
@@ -758,8 +756,8 @@ span.m__val {
 .country-select,
 textarea {
     width: 100%;
-    padding: 15px;
-    border: 2px solid #e50124; /* Updated border color */
+    padding: 10px;
+    border: 2px solid #e50124;
     border-radius: 12px;
     font-size: 16px;
     background: transparent;
@@ -769,15 +767,13 @@ textarea {
 }
 
 /* Focus effect to maintain consistent border color */
-/* Remove blue focus outline */
 .input-field:focus,
 textarea:focus,
 .country-select:focus {
-    outline: none; /* Removes the default browser outline */
-    border-color: #e50124; /* Keeps the red border on focus */
-    box-shadow: none; /* Removes any additional focus shadow */
+    outline: none;
+    border-color: #e50124;
+    box-shadow: none;
 }
-
 
 /* Adjusting label behavior */
 .input-group label {
@@ -805,7 +801,7 @@ textarea:focus ~ label,
 textarea:not(:placeholder-shown) ~ label {
     top: -10px;
     left: 10px;
-    color: #e50124; /* Updated label color */
+    color: #e50124;
     font-size: 14px;
     z-index: 1;
 }
@@ -928,10 +924,6 @@ textarea:focus ~ .input-highlight {
         gap: 40px;
     }
     
-    .form-inputs {
-        grid-template-columns: 1fr;
-    }
-    
     .contact-info h2 {
         font-size: 2.2rem;
     }
@@ -947,5 +939,98 @@ textarea:focus ~ .input-highlight {
 textarea:focus-visible,
 .btn:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    box-shadow: linear-gradient(45deg, #2d2e32, #e50124);
 }
+
+
+/* Consent checkbox styles */
+.consent-group {
+    margin: 25px 0;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+}
+
+.checkbox-group label {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    position: static;
+    transform: none;
+    background: none;
+    padding: 0;
+}
+
+.checkbox-group a {
+    color: #e50124;
+    text-decoration: none;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.logo-container {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.company-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: #2d2e32;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .logo-container {
+        position: static;
+        transform: none;
+        margin-bottom: 1rem;
+    }
+
+    .company-logo {
+        height: 40px;
+    }
+}
+
+
+/* footer */
+

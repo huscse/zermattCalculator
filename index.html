@@ -38,22 +38,24 @@
 
 <div class="calculator-guide">
     <div class="guide-header">
-        <h1>Solar Energy Calculator</h1>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="/TellCo-Logo-normal.png" alt="Zermatt Logo" class="company-logo">
+                <!-- Text alternative for the logo -->
+            </div>
+            <h1>Solar Energy Calculator</h1>
+        </div>
         <p class="subtitle">Find the perfect solar solution for your home in minutes</p>
         <div class="underline"></div>
     </div>
-
-    <div class="quick-guide">
-        <h3>How This Calculator Works:</h3>
-        <p>Tell us about the appliances you use at home, and we'll calculate how much solar power you need. Don't worry if you're unsure about some details - we've included helpful examples and guidance throughout.</p>
-    </div>
+    <!-- Rest of the content remains the same -->
 
     <div class="steps-container">
         <div class="step-card">
             <div class="step-icon">1</div>
             <div class="step-content">
                 <h2>Add Your Appliances</h2>
-                <p>Let's start with the devices you use regularly (like refrigerators, TVs, air conditioners, etc.).</p>
+                <p>Let's start with the devices you use regularly (like refrigerators, TVs, air conditioners, etc.). Predefined appliances are available in the "Add Appliance" box but you can also add your appliances!</p>
                 <div class="example-box">
                     <strong>For example:</strong> Start with your biggest energy users like:
                     <ul>
@@ -739,7 +741,6 @@
                                             <div>3 hours</div>
                                             <div>Zermatt BS-1.5</div>
                                         </div>
-                                        
                                     </div>
                                     <div class="zermatt_col zermatt_BS_2_3 Pack2">
                                         <div class="modal_name">Zermatt SG-1200</div>
@@ -831,6 +832,19 @@
                                             <label>Message</label>
                                             <span class="input-highlight"></span>
                                         </div>
+                                        
+                                        <!-- New consent checkboxes -->
+                                        <div class="consent-group">
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="contact-consent" name="contact-consent" required>
+                                                <label for="contact-consent">I consent to the storage of my submitted data for the purpose of responding to my inquiry. *</label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="marketing-consent" name="marketing-consent">
+                                                <label for="marketing-consent">I would like to receive occasional updates about Tellco Europe's products and services (optional)</label>
+                                            </div>
+                                        </div>
+                        
                                         <div class="form-button">
                                             <button type="submit" class="btn">
                                                 <span class="btn-text">Send</span>
@@ -841,7 +855,7 @@
                                 </div>
                             </div>
                         </section>
-                        
+                          
                         <script>
                         // List of all countries
                         const countries = [
@@ -928,6 +942,6 @@
         </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
-
+    
 </body>
 </html>
