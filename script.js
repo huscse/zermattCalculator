@@ -107,10 +107,9 @@ function createRow(index) {
     <div class="m__label">
         <div class="m__name">
             Power Rating (W)
-            <span class="tooltip-icon" tabindex="0">i</span>
-            <div class="tooltip-content">
-                The power rating represents the maximum electrical power this device can handle, measured in Watts (W).
-            </div>
+            
+
+            
         </div>
     </div>
     <div class="m__group">
