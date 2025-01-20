@@ -13,6 +13,7 @@ const appliances = [
     { appliance: 'Blender', power: 500, usage: 0.1 },
     { appliance: 'Toaster', power: 650, usage: 0.1 },
     { appliance: 'Refrigerator', power: 120, usage: 24 },
+    { appliance: 'Refrigerator', power: 120, usage: 12 },
     { appliance: 'Rice Cooker', power: 820, usage: 1 },
     { appliance: 'Can Opener', power: 150, usage: 0.1 },
     { appliance: 'Coffee Machine', power: 1000, usage: 0.1 },
