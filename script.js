@@ -12,10 +12,7 @@ const packs = [
 const appliances = [
     { appliance: 'Blender', power: 500, usage: 0.1 },
     { appliance: 'Toaster', power: 650, usage: 0.1 },
-<<<<<<< HEAD
     { appliance: 'Refrigerator', power: 120, usage: 24 },
-=======
->>>>>>> 2dc39836ed0dc1c180da706d7f454cc8ef274e44
     { appliance: 'Refrigerator', power: 120, usage: 12 },
     { appliance: 'Rice Cooker', power: 820, usage: 1 },
     { appliance: 'Can Opener', power: 150, usage: 0.1 },
