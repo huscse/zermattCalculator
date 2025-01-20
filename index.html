@@ -36,7 +36,539 @@
     }
 </style>
 
+<div class="calculator-guide">
+    <div class="guide-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="/TellCo-Logo-normal.png" alt="Zermatt Logo" class="company-logo">
+                <!-- Text alternative for the logo -->
+            </div>
+            <h1>Solar Energy Calculator</h1>
+        </div>
+        <p class="subtitle">Find the perfect solar solution for your home in minutes</p>
+        <div class="underline"></div>
+    </div>
+    <!-- Rest of the content remains the same -->
 
+    <div class="steps-container">
+        <div class="step-card">
+            <div class="step-icon">1</div>
+            <div class="step-content">
+                <h2>Add Your Appliances</h2>
+                <p>Let's start with the devices you use regularly (like refrigerators, TVs, air conditioners, etc.). Predefined appliances are available in the "Add Appliance" box but you can also add your appliances!</p>
+                <div class="example-box">
+                    <strong>For example:</strong> Start with your biggest energy users like:
+                    <ul>
+                        <li>Refrigerator</li>
+                        <li>Air conditioners</li>
+                        <li>Dish Washer</li>
+                    </ul>
+                </div>
+                <button class="action-button add-appliance-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 5l0 14" />
+                        <path d="M5 12l14 0" /></svg>
+                    <span>Add Appliance</span>
+                </button>
+                <div class="helper-text">
+                    <p>Click this button on the calculator below for each device you want to add to your calculation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-icon">2</div>
+            <div class="step-content">
+                <h2>Enter Appliance Details</h2>
+                <p>Don't worry if you're not sure about exact numbers - we'll help you estimate:</p>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="detail-icon">⚡</div>
+                        <div>
+                            <h3>Power Rating (Watts)</h3>
+                            <p>Check the back or bottom of your appliance for a label showing "xxxW" or "xxx Watts"</p>
+                            <div class="example-text">Example: A TV might show "100W" or "100 Watts"</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">⏱️</div>
+                        <div>
+                            <h3>Daily Usage Time</h3>
+                            <p>Your best guess of daily use is fine!</p>
+                            <div class="example-text">Example: Refrigerator = 24 hours, TV = 4 hours</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-icon">3</div>
+            <div class="step-content">
+                <h2>Get Your Personalized Recommendation</h2>
+                <p>Once you've added your appliances, we'll show you:</p>
+                <ul class="results-preview">
+                    <li>Your total energy needs</li>
+                    <li>Recommended Zermatt Battery Storage System</li>
+                    <li>Recommended Zermatt Off-Grid Solar Energy Storage Station</li>
+                </ul>
+                <p>Click on "Calculate My Solar Needs" on the calculator below to view Recommendations</p>
+
+                <button class="solutions-button">
+                    Calculate My Solar Needs
+                    
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer-section">
+        <div class="disclaimer-card primary">
+            <div class="disclaimer-icon">ℹ️</div>
+            <div class="disclaimer-content">
+                <h2>Disclaimer!</h2>
+                <ul>
+                    <li>All calculations are estimates based on typical usage patterns</li>
+                    <li>Actual energy consumption may vary based on factors like weather and specific usage</li>
+                    <li>Results should be used as a general guide only!</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="disclaimer-card secondary">
+            <div class="disclaimer-icon">💡</div>
+            <div class="disclaimer-content">
+                <h2>Need Help?</h2>
+                <p>Not sure about something? Our solar experts are here to help! We can guide you through the process or double-check your calculations. Feel free to reach out to us with any questions by filling the contact support form below!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .calculator-guide {
+        max-width: 1200px;
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        color: #1a1a1a;
+        background-color: #ffffff;
+    }
+
+    .guide-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .guide-header h1 {
+        font-size: 2.5rem;
+        color: #1a1a1a;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        color: #4a5568;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    .underline {
+        height: 4px;
+        width: 60px;
+        background: linear-gradient(45deg, #2d2e32, #e50124);
+        margin: 0 auto;
+        border-radius: 2px;
+    }
+
+    .welcome-banner {
+        background: linear-gradient(45deg, #2d2e32, #e50124);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .welcome-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+    }
+
+    .welcome-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    .welcome-content p {
+        opacity: 0.9;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .quick-guide {
+        background: #f8fafc;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        margin: 1rem 0 1.5rem 0;
+        border: 1px solid #e2e8f0;
+    }
+
+    .quick-guide h3 {
+        color: #2d2e32;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    .quick-guide p {
+        margin: 0;
+        line-height: 1.6;
+        color: #4a5568;
+    }
+
+    .steps-container {
+        display: grid;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .step-card {
+        display: flex;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0;
+    }
+
+    .step-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(45deg, #2d2e32, #e50124);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 600;
+        flex-shrink: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-content {
+        flex: 1;
+    }
+
+    .step-content h2 {
+        font-size: 1.25rem;
+        color: #1a1a1a;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    .step-content p {
+        color: #4a5568;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+    }
+
+    .example-box {
+        background: #f8fafc;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        margin: 0.75rem 0;
+        font-size: 0.9rem;
+        border: 1px solid #e2e8f0;
+    }
+
+    .example-box strong {
+        color: #2d2e32;
+        font-weight: 600;
+    }
+
+    .example-box ul {
+        margin: 0.5rem 0 0 1.25rem;
+        padding: 0;
+    }
+
+    .example-box li {
+        margin: 0.25rem 0;
+        color: #4a5568;
+    }
+
+    .details-grid {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .detail-item {
+        padding: 1rem;
+        background: #f8fafc;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .detail-icon {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .detail-item h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: #2d2e32;
+    }
+
+    .example-text {
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: 0.25rem;
+        font-style: italic;
+    }
+
+    .results-preview {
+        margin: 0.75rem 0;
+        padding-left: 1.25rem;
+        list-style-type: disc;
+    }
+
+    .results-preview li {
+        margin: 0.25rem 0;
+        color: #4a5568;
+        line-height: 1.5;
+    }
+
+    .action-button, .solutions-button, .contact-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 0.95rem;
+    }
+
+    .action-button {
+        border: 0;
+        background: transparent;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-weight: 600;
+        background: #1c6195;
+        color: #ffffff;
+        min-width: 200px;
+        cursor: pointer;
+        height: 26px;
+        border-radius: 4px;
+        border: 1px solid rgb(28 97 149 / 14%);
+        gap: 4px;
+    }
+
+
+    .solutions-button {
+        background: linear-gradient(45deg, #2d2e32, #e50124);
+    }
+
+    .solutions-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(229, 1, 36, 0.2);
+    }
+
+    .contact-button {
+        background: #4a5568;
+    }
+
+    .contact-button:hover {
+        background: #2d3748;
+        transform: translateY(-2px);
+    }
+
+    .plus-icon {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .arrow-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .helper-text {
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+        color: #666;
+        font-style: italic;
+    }
+
+    .disclaimer-section {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .disclaimer-card {
+        padding: 1.25rem;
+        border-radius: 8px;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .disclaimer-card.primary {
+        background: #fff5f5;
+        border: 1px solid #feb2b2;
+    }
+
+    .disclaimer-card.secondary {
+        background: #f0f9ff;
+        border: 1px solid #bae6fd;
+    }
+
+    .disclaimer-icon {
+        font-size: 1.25rem;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+    .disclaimer-content h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #2d2e32;
+    }
+
+    .disclaimer-content ul {
+        margin: 0;
+        padding-left: 1.25rem;
+        list-style-type: disc;
+    }
+
+    .disclaimer-content li {
+        margin-bottom: 0.5rem;
+        color: #4a5568;
+        line-height: 1.5;
+    }
+
+    .disclaimer-content p {
+        color: #4a5568;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .calculator-guide {
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        .guide-header h1 {
+            font-size: 2rem;
+        }
+
+        .welcome-banner {
+            flex-direction: column;
+            text-align: center;
+            padding: 1.25rem;
+        }
+
+        .step-card {
+            flex-direction: column;
+            padding: 1.25rem;
+        }
+
+        .step-icon {
+            margin-bottom: 0.5rem;
+        }
+
+        .details-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .action-button, .solutions-button, .contact-button {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .guide-header h1 {
+            font-size: 1.75rem;
+        }
+
+        .welcome-content h2 {
+            font-size: 1.25rem;
+        }
+
+        .step-content h2 {
+            font-size: 1.1rem;
+        }
+
+        .detail-item {
+            padding: 0.75rem;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .details-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    /* Accessibility improvements */
+    .action-button:focus, 
+    .solutions-button:focus, 
+    .contact-button:focus {
+        outline: 2px solid #2d2e32;
+        outline-offset: 2px;
+    }
+
+    /* Print styles */
+    @media print {
+        .calculator-guide {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .step-card {
+            break-inside: avoid;
+            box-shadow: none;
+            border: 1px solid #000;
+        }
+
+        .welcome-banner {
+            background: none;
+            border: 1px solid #000;
+            color: #000;
+        }
+    }
+</style>
     <div id="m_calculator_content">
         <div class="m__calculator" style="padding-top:30px; padding-bottom: 30px">
             <div class="m__wrap">
@@ -68,8 +600,10 @@
                                 <div class="m__name" id="Total_Energy">Total Energy Consumption: <span>0.00 Wh/day</span></div>
                             </div>
                             <div class="m__group text_center">
-                                <button class="button__e" onclick="MShow()">See Solutions</button>
-                                <span id="m__error" style="display: none;">Please select your appliance details</span>
+                                <button class="button__e" onclick="MShow()">Calculate My Solar Needs
+                                    
+                                </button>
+                                
                             </div>
                         </div>
                     </div>
@@ -176,7 +710,7 @@
                     </div>
                     <div class="block_table2" id="block_table2" style="display: none;">
                         <div class="mtitle">
-                            Recommended Zermatt Off-Grid Soalr Energy Storage Station
+                            Recommended Zermatt Off-Grid Solar Energy Storage Station
                         </div>
                         <div class="informative_">
                             <span class="is_less">Your total energy consumption is less than we offer and the closest Solar Panel that would work for you is Zermatt SG-600</span>
@@ -207,7 +741,6 @@
                                             <div>3 hours</div>
                                             <div>Zermatt BS-1.5</div>
                                         </div>
-                                        
                                     </div>
                                     <div class="zermatt_col zermatt_BS_2_3 Pack2">
                                         <div class="modal_name">Zermatt SG-1200</div>
@@ -299,6 +832,19 @@
                                             <label>Message</label>
                                             <span class="input-highlight"></span>
                                         </div>
+                                        
+                                        <!-- New consent checkboxes -->
+                                        <div class="consent-group">
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="contact-consent" name="contact-consent" required>
+                                                <label for="contact-consent">I consent to the storage of my submitted data for the purpose of responding to my inquiry. *</label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="marketing-consent" name="marketing-consent">
+                                                <label for="marketing-consent">I would like to receive occasional updates about Tellco Europe's products and services (optional)</label>
+                                            </div>
+                                        </div>
+                        
                                         <div class="form-button">
                                             <button type="submit" class="btn">
                                                 <span class="btn-text">Send</span>
@@ -309,7 +855,7 @@
                                 </div>
                             </div>
                         </section>
-                        
+                          
                         <script>
                         // List of all countries
                         const countries = [
@@ -397,5 +943,6 @@
     </div>
     <script type="text/javascript" src="script.js"></script>
 
+    
 </body>
 </html>
