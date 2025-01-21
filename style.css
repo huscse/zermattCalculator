@@ -1053,6 +1053,14 @@ textarea:focus-visible,
     gap: 2rem;
 }
 
+/* change when events are added */
+.footer-columnn {
+    display: none;
+}
+
+
+
+
 .footer-column h3 {
     color: #fff;
     font-size: 1.25rem;
@@ -1062,6 +1070,8 @@ textarea:focus-visible,
     padding-bottom: 0.5rem;
 }
 
+/* change once events are added */
+
 .footer-column h3::after {
     content: '';
     position: absolute;
@@ -1070,6 +1080,7 @@ textarea:focus-visible,
     width: 50px;
     height: 2px;
     background-color: #e31837;
+
 }
 
 .footer-column ul {
@@ -1193,7 +1204,7 @@ textarea:focus-visible,
 .solar-disclaimer-icon {
     flex-shrink: 0;
     font-size: 1.1rem;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 .solar-disclaimer-title {
@@ -1258,4 +1269,37 @@ textarea:focus-visible,
 }
 .solar-faq-item details > summary::-webkit-details-marker {
     display: none;
+}
+
+
+/* Add these new styles to your existing CSS */
+.solar-faq-cta {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.solar-faq-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #2d2e32, #e50124);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.solar-faq-button:hover {
+    background: linear-gradient(45deg, #2d2e32, #d80625);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* If the button has an icon, add this */
+.solar-faq-button-icon {
+    margin-left: 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
 }
