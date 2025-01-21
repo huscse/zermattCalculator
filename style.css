@@ -552,7 +552,8 @@ button#add_appliance {
     font-style: italic;
     color: #909090;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
+
 }
 
 .block_table2 .Appliance_values>div {
@@ -1167,4 +1168,94 @@ textarea:focus-visible,
         gap: 1rem;
         text-align: center;
     }
+}
+
+.solar-disclaimer-section {
+    width: 100%;
+    padding: 1rem;
+}
+
+.solar-disclaimer-card {
+    background: #fff5f5;
+    border: 1px solid #feb2b2;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.solar-disclaimer-header {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.solar-disclaimer-icon {
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+.solar-disclaimer-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin: 0;
+}
+
+.solar-disclaimer-content {
+    margin-left: 2.25rem;
+}
+
+.solar-faq-item {
+    border-bottom: 1px solid #feb2b2;
+    padding: 0.75rem 0;
+}
+
+.solar-faq-item:last-child {
+    border-bottom: none;
+}
+
+.solar-faq-question {
+    color: #2d3748;
+    font-weight: 600;
+    padding: 0.5rem 2rem 0.5rem 0;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: none;
+    font-size: 1rem;
+}
+
+.solar-faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #e53e3e;
+    transition: transform 0.2s ease;
+}
+
+.solar-faq-item details[open] .solar-faq-question::after {
+    content: '−';
+}
+
+.solar-faq-answer {
+    color: #4a5568;
+    line-height: 1.6;
+    padding-bottom: 0.5rem;
+}
+
+/* Hide native details marker */
+.solar-faq-item details > summary {
+    list-style: none;
+}
+.solar-faq-item details > summary::-webkit-details-marker {
+    display: none;
 }
