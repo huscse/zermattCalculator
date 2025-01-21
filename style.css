@@ -1002,7 +1002,7 @@ textarea:focus-visible,
 }
 
 .company-logo {
-    height: 50px;
+    height: 85px;
     width: auto;
     object-fit: contain;
 }
